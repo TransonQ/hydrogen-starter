@@ -1,4 +1,8 @@
-import { CacheLong, gql, Link, useShopQuery, useUrl } from '@shopify/hydrogen'
+import {
+  CacheLong,
+  gql,
+  Link, Seo, useShopQuery, useUrl
+} from '@shopify/hydrogen'
 
 const SHOP_QUERY = gql`
   query ShopInfo {
@@ -23,6 +27,13 @@ export const Layout = ({ children }) => {
 
   return (
     <>
+      <Seo
+        type='defaultSeo'
+        data={{
+          title: shop.name,
+          description: shop.description,
+        }}
+      />
       <div className='flex flex-col min-h-screen antialiased bg-neutral-50'>
         <div className=''>
           <a

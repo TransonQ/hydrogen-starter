@@ -93,6 +93,11 @@ Hydrogen 提供了 [useShopQuery](https://shopify.dev/api/hydrogen/hooks/global/
 
 - 共享组件 `xxx.jsx`： 在服务端和客户端都能渲染的组件。
 
-#### 第一个服务端组件
+### 第一个服务端组件
 
 [第一个服务端组件 `Layout.server.jsx`](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/fetch-data#create-a-layout-component)是一个布局组件, 因为布局组件不需要任何客户端侧的交互。一个服务端组件，定义了一个页面的结构和组织，可用于 Hydrogen 应用程序的不同部分。
+
+### 生成 SEO 标签
+
+Hydrogen 提供了一个可以渲染 SEO 信息的 [`<SEO/>`客户端组件](https://shopify.dev/api/hydrogen/components/primitive/seo)，`<SEO/>`使用从`Storefront API`获取的商城数据来生成可以被浏览器搜索引擎识别的 `head` 标签。
+

@@ -5,7 +5,7 @@ import './index.css'
 
 function App() {
   return (
-    <Suspense fallback={null}>
+    <Suspense fallback={<>loading...</>}>
       <ShopifyProvider>
         <Router>
           <FileRoutes />

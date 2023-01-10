@@ -9,6 +9,7 @@ flowchart LR
   hydrogen --- fetch[获取数据的方式]
   fetch --- fa[商店 GraphQL 手册]
   fetch --- fb[useShopQuery]
+  hydrogen --- a
 ```
 
 ## 初始化项目结构
@@ -27,7 +28,7 @@ flowchart LR
 │   │   └── favicon.svg
 │   ├── index.css
 │   └── routes
-│   └── index.server.jsx
+│       └── index.server.jsx
 ├── vite.config.js
 └── yarn.lock
 ```
@@ -99,5 +100,18 @@ Hydrogen 提供了 [useShopQuery](https://shopify.dev/api/hydrogen/hooks/global/
 
 ### 生成 SEO 标签
 
-Hydrogen 提供了一个可以渲染 SEO 信息的 [`<SEO/>`客户端组件](https://shopify.dev/api/hydrogen/components/primitive/seo)，`<SEO/>`使用从`Storefront API`获取的商城数据来生成可以被浏览器搜索引擎识别的 `head` 标签。
+Hydrogen 提供了一个可以渲染 SEO 信息的 [`<SEO/>`客户端组件](https://shopify.dev/api/hydrogen/components/primitive/seo)，`<SEO/>`使用从 [Storefront API](https://shopify.dev/api/storefront) 获取的商城数据来生成可以被浏览器搜索引擎识别的 `head` 标签。
 
+
+### [获取 collections](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/fetch-data#create-a-featuredcollections-component)
+
+collections 让顾客更容易通过商品种类来找到产品。
+
+创建一个 `FeaturedCollections` 示例组件, 目的是在首页列出一些 collections, 这个组件将会在 [Storefront API](https://shopify.dev/api/storefront) 查询前三个 collection 。
+
+- `/src/components/FeaturedCollections.server.jsx`, 服务端组件获取数据用[`useShopQuery`](https://shopify.dev/api/hydrogen/hooks/global/useshopquery)从 [Storefront API](https://shopify.dev/api/storefront) 获取数据。
+
+### [获取collections图片](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/fetch-data#fetch-collection-images)
+
+- 获取collection关联的图片。(tips:  还是得熟悉 [Storefront API](https://shopify.dev/api/storefront) 的文档 , 最好过一遍了解大概是什么功能, GraphQL 特点就是必须熟悉请求字段的查询手册...)
+- 这里用到了一个 hydrogen 提供的组件 `</Image>`

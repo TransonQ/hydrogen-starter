@@ -9,7 +9,6 @@ flowchart LR
   hydrogen --- fetch[获取数据的方式]
   fetch --- fa[商店 GraphQL 手册]
   fetch --- fb[useShopQuery]
-  hydrogen --- a
 ```
 
 ## 初始化项目结构
@@ -123,7 +122,16 @@ collections 让顾客更容易通过商品种类来找到产品。
 - [Suspense](https://shopify.dev/custom-storefronts/hydrogen/streaming-ssr)是 react 的内置组件(react18 才是完全体)
 - 目的是为了治理组件内部使用异步数据在加载过程中提供提供一个 loading 反馈效果
 - [Suspense for data fetching to complement streaming SSR](https://nextjs.org/docs/advanced-features/react-18/streaming)
-- 使用 : 简单。使用`<Suspense></Suspense>`包裹直接使用了异步数据的组件,否则会往上寻找最近的`Suspense`组件并使用fallback回显。 一般来说, 颗粒度越细, 用户体验越好。
+- 使用 : 简单。使用`<Suspense></Suspense>`包裹直接使用了异步数据的组件,否则会往上寻找最近的`Suspense`组件并使用 fallback 回显。 一般来说, 颗粒度越细, 用户体验越好。
 
+## 尝试一下完成后续购物车页面, 产品页面的教程
 
+1. [Build a collection page](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/collections)
 
+2. [Build a product page](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/products)
+
+3. [Build a cart](https://shopify.dev/custom-storefronts/hydrogen/getting-started/tutorial/cart)
+
+## 后续需要调研的事项
+
+hydrogen 是否适用像现在 liquid 页面可以关联使用配置项独立配置
